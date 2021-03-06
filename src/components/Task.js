@@ -7,7 +7,7 @@ function Task({task,ondelete,ontoggle}) {
             </h2>
             <p>{task.day}</p>
             
-        </div>
+        </div> 
     )
 }
 
