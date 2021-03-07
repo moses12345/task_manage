@@ -3,6 +3,7 @@ import Header from "./components/header";
 import Tasks from './components/Tasks'
 import Addtasks from './components/Addtasks'
 function App() {
+  const [showAddtask, setshowAddtask] = useState(false)
   const [tasks,setTasks] =useState([
         {
             id:1,
@@ -35,14 +36,17 @@ function App() {
     const togglereminder=(id)=>{
            setTasks(tasks.map(task=> task.id === id ? {...task ,reminder:!task.reminder} :task))
     }
+    const pressaddbutton=()=>{
+      setshowAddtask(!showAddtask)
+    }
   return(
     <div className="container">
       {/*this is with props pasing to components*/}
       {/*<Header  title="cool" name="this is a name" style={{color:"blue"}} />*/}
        {/*comment in reactJavascript By QuackAttack69 on Apr 4 2020 Donate*/}
        
-       <Header style={{color:"blue"}} />
-       <Addtasks addingtask={addtask}/>
+       <Header style={{color:"blue"}} addtask={pressaddbutton} presentstate={showAddtask} />
+       {showAddtask && <Addtasks addingtask={addtask} />}
        {tasks.length > 0 ?<Tasks tasks={tasks} ondelete={ondelete} ontoggle={togglereminder}/>:'no tasks to show'}
     </div>
   ) 

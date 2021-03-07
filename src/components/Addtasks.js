@@ -23,19 +23,15 @@ function Addtasks({addingtask}) {
             
             <div className="form-control">
                <label > Date </label>
-               <input type="datetime-local
-               " placeholder='Add date' value={day} onChange={(e)=>setDay(e.target.value)}/>
+               <input type="datetime-local" placeholder='Add date' value={day} onChange={(e)=>setDay(e.target.value)}/>
             </div>
             
             <div className="form-control form-control-check">
                <label > Reminder </label>
-               <input type="checkbox" checked={reminder} onChange={(e)=>setreminder(e.currentTarget.checked
-                
-                )} />
+               <input type="checkbox" checked={reminder} onChange={(e)=>setreminder(e.currentTarget.checked)} />
             </div>
             <input type="submit" className="btn btn-block" value="SUBMIT" />
         </form>
     )
 }
-
 export default Addtasks

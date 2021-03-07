@@ -6,6 +6,7 @@ const Tasks=({tasks,ondelete,ontoggle})=>{
           {tasks.map((task)=>(
               <Task key={task.id} task={task} ondelete={ondelete} ontoggle={ontoggle} />
           ))}  
+         
         </>
     )
 }
